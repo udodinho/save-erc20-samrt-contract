@@ -12,7 +12,7 @@ describe("SaveERC20", function () {
   // and reset Hardhat Network to that snapshot in every test.
   async function deployToken() {
     // Contracts are deployed using the first signer/account by default
-    const [owner, otherAccount] = await hre.ethers.getSigners();
+    const [owner] = await hre.ethers.getSigners();
 
     const erc20Token = await hre.ethers.getContractFactory("Web3CXI");
     const token = await erc20Token.deploy();
@@ -100,7 +100,7 @@ describe("SaveERC20", function () {
 
 
   describe("Withdraw", function () {
-    it("Should deposit successfully", async function () {
+    it("Should withdraw successfully", async function () {
       const { saveErc20, owner, otherAccount, token } = await loadFixture(deploySaveERC20);
 
       // Transfer ERC20 token from owner to otherAccount
