@@ -2,8 +2,6 @@
 pragma solidity ^0.8.17;
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
-
-
 contract SaveERC20 {
     error AddressZeroDetected();
     error ZeroValueNotAllowed();
@@ -11,7 +9,6 @@ contract SaveERC20 {
     error InsufficientFunds();
     error NotOwner();
     error InsufficientContractBalance();
-
 
     address public owner;
     address public tokenAddress;
@@ -25,7 +22,6 @@ contract SaveERC20 {
         owner = msg.sender;
         tokenAddress = _tokenAddress;
     }
-
 
     function deposit(uint256 _amount) external {
         if(msg.sender == address(0)) {
